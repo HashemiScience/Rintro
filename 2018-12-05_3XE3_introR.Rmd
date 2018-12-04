@@ -3,7 +3,7 @@ title: "Introduction to R"
 subtitle: "PNB 3XE3, Fall 2018"
 author: "Ali Hashemi*"
 date: '2018-12-05'
-output: pdf_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -101,7 +101,7 @@ sd(x) / sqrt(length(x)) # Q: does this formula look familiar?
 
 The best way to learn R (or any programming language), is through trial-and-error. The best resource for learning how to use functions is through R's built-in `help()` function and online resources (e.g., Google, StackOverflow). Below are some examples of how to ask R for help on using the `log()` and `t.test` functions.
 
-```{r, eval=T}
+```{r, eval=F}
 ?log
 help("log")
 help("+")
@@ -119,12 +119,13 @@ To load the data file into RStudio, you have two options.
 
 ### Option 1. Download data file, save in a folder, and load in from that folder
 
-```{r, eval=T}
+```{r, eval=F}
+## NOTE THAT eval=F SO THIS CHUNK OF CODE IS NOT EXECUTED. CHANGE TO eval=T IF YOU CHOOSE THIS METHOD
 # Check what the current working directory is
 getwd()
 
 # set your working directory to the project folder that contains the data file
-setwd("/Users/alihashemi/Dropbox/Academic/Guest Lectures/")
+setwd("YOUR PATH")
 
 # check what is inside your directory (and confirm your data file is there)
 dir()
@@ -347,3 +348,21 @@ ggplot(data=faceData) +
   stat_smooth(aes(x=pc, y=rt, col=ageGroup), method="lm")
 
 ```
+
+# Other cool things & useful links
+You might be surprised to learn that I made this entire document within RStudio, using something called `RMarkdown` and `knitr` (google them to learn!). I will continue to improve this document and create other resources, and will upload everything to a GitHub repository linked below. I've linked the ".Rmd" file used to create this document, which is the script that is capable of executing R code, as well as write PDF/HTML documents.
+
+## Useful links:
+
+1. Ali Hashemi's repository for storing this document (and other resources in the future as I develop them)
+* https://github.com/HashemiScience/Rintro
+2. A work-in-progress statistics textbook written in R
+* https://crumplab.github.io/statistics/
+3. Patrick Bennett's online resources for graduate statistic taught in McMaster's PNB department:
+* http://psycserv.mcmaster.ca/bennett/psy710/index.html
+4. A gallery of nice R-made figures, and code so you can make them too:
+* https://www.r-graph-gallery.com/
+5. Using R for data science:
+* https://r4ds.had.co.nz/
+6. A series of online modules teaching descriptive/inferential statistics created by folks from the PNB department (headed by Dr. Scott Watter):
+* https://macblog.mcmaster.ca/statistics/
